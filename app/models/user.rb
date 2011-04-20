@@ -2,6 +2,14 @@ class User < ActiveRecord::Base
   has_many :award_users
   has_many :awards, :through => :award_users
   
+  def unachieved_awards
+    Award.all - awards
+  end
+  
+  def assign_award(award)
+    self.award_users.create(:award => award)
+  end
+  
   def self.create_with_meetup(auth)
     user = create! do |user|
       user.provider = auth["provider"]
