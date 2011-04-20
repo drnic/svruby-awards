@@ -1,14 +1,11 @@
 
 - if current_user
   %h1 Your Awards
-  - if current_user.awards.count > 0
-    %ul
-      - current_user.awards.each do |award|
-        %li= award.name
+  %ul
+    - current_user.awards.each do |award|
+      %li= award.name
 
-    %p Have you been granted new awards? Fill it in below!
-  - else
-    %p Have you been granted an award? Fill it in below!
+  %p Have you been granted new awards? Fill it in below!
   
   %p TODO - form to create/assign awards to self. In development, in the console, try:
   %pre

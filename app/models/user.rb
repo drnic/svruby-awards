@@ -6,8 +6,12 @@ class User < ActiveRecord::Base
     user = create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
-      user.update_with_omniauth(auth)
+      user.update_with_meetup(auth)
     end
+    debugger
+    award = Award.find_by_name("Created an account")
+    user.award_users.create(:award => award)
+    user
   end
   
   # Sets User attributes based on omniauth/meetup.com fields
