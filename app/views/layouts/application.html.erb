@@ -7,8 +7,24 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
+  <style type="text/css" media="screen">
+    .user-image {
+      width: 48px;
+    }
+  </style>
+  <% if current_user %>
+    <%= image_tag current_user.image_url, :class => "user-image" %>
+    <%= current_user.name %> | 
+    <%= link_to "Sign Out", signout_path %>
+  <% else %>
+    <%= link_to "Sign in with Meetup.com", "/auth/meetup" %>
+  <% end %>
+  
+  <% flash.each do |name, msg| %>
+    <pre><%= {name: msg}.inspect %></pre>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+  <% end %>
+  <%= yield %>
 
 </body>
 </html>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110420180328) do
+ActiveRecord::Schema.define(:version => 20110420182544) do
 
   create_table "users", :force => true do |t|
     t.string   "provider"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(:version => 20110420180328) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_url"
+    t.string   "location"
+    t.string   "profile_url"
   end
 
 end
