@@ -1,2 +1,22 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+
+- if current_user
+  %h1 Your Awards
+  - if current_user.awards.count > 0
+    %ul
+      - current_user.awards.each do |award|
+        %li= award.name
+
+    %p Have you been granted new awards? Fill it in below!
+  - else
+    %p Have you been granted an award? Fill it in below!
+  
+  %p TODO - form to create/assign awards to self. In development, in the console, try:
+  %pre
+    - preserve do
+      award = Award.find_or_create_by_name("First meeting")
+      == User.find(#{current_user.id}).award_users.create(:award => award)
+
+- else
+  %h1 Club Awards
+  %p
+    To trick our members into participating, we give away cool awards.

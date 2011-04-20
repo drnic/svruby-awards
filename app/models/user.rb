@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :award_users
+  has_many :awards, :through => :award_users
+  
   def self.create_with_meetup(auth)
     user = create! do |user|
       user.provider = auth["provider"]
