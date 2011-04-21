@@ -1,0 +1,9 @@
+--- 
+content_path: 
+partials: {}
+
+index_path: index.html
+stylesheet_dir: stylesheets
+image_dir: public/images
+javascript_dir: public/javascripts
+no_sass: false

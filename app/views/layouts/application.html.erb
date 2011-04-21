@@ -1,38 +1,45 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>SvrubyAwards</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <title>Ninja Admin</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/ninja-admin.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/application.css" />
+  <%= javascript_include_tag :all %>
+  <%= yield(:head) %>
 </head>
+
 <body>
-  <style type="text/css" media="screen">
-    .user-image {
-      width: 48px;
-    }
-    ul.current-members li {
-      display: inline;
-      padding: 5px;
-      list-style-type: none;
-    }
-    ul.current-members li.current-user {
-      background-color: gray;
-    }
-  </style>
-  <% if current_user %>
-    <%= image_tag current_user.image_url, :class => "user-image" %>
-    <%= current_user.name %> | 
-    <%= link_to "Sign Out", signout_path %>
-  <% else %>
-    <%= link_to "Sign in with Meetup.com", "/auth/meetup" %>
-  <% end %>
-  
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, id: "flash_#{name}" %>
-  <% end %>
 
-  <%= yield %>
-
+	<div class="wrapper">
+	
+		<h1 class="logo">NINJA ADMIN</h1>
+		<p class="txt_right"><%= render :partial => 'layouts/login' %></p>
+	
+	<!-- Navigation -->
+	
+		<div class="navigation">
+				<ul><%= render :partial => 'layouts/menu' %></ul>
+			
+				<div id="searchform"><%= render :partial => 'layouts/search' %></div>
+			
+		</div>
+		
+		<div class="clear"></div>
+	
+	
+		<div class="content">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, id: "flash_#{name}" %>
+      <% end %>
+      
+		  <%= yield %>
+		</div>
+		
+		
+		<p class="footer"><a href="#">ADVANCED  SEARCH</a> <span class="v_line"> |</span> <a href="#">LOGOUT</a></p>
+		
+		
+	</div>
 </body>
 </html>

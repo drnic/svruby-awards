@@ -1,0 +1,11 @@
+.user-image {
+  width: 48px;
+}
+ul.current-members li {
+  display: inline;
+  padding: 5px;
+  list-style-type: none;
+}
+ul.current-members li.current-user {
+  background-color: gray;
+}
