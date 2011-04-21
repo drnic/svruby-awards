@@ -1,7 +1,8 @@
 
 ## Dependencies
 
-* Postgresql
+* Ruby 1.9.2 (it is using some Ruby 1.9.2 specific syntax)
+* Postgresql (Gemfile includes 'pg' gem)
 
 ## Development
 
