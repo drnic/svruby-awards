@@ -9,3 +9,14 @@ ul.current-members li {
 ul.current-members li.current-user {
   background-color: gray;
 }
+
+ul.button-list {
+  outline: none;
+}
+
+ul.button-list li {
+  margin: 0 10px 0 0;
+  list-style: none;
+  display: inline-block;
+  float: left;
+}

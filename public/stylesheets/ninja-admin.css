@@ -1,10 +1,10 @@
 /* CSS Document */
 
-body{text-align:center; margin:0; padding:0; font-family:Lucida Grande, Arial; font-size:13px; background-color:#ebebeb; color:#464646; }
+body{margin:0; padding:0; font-family:Lucida Grande, Arial; font-size:13px; background-color:#ebebeb; color:#464646; }
 
 .wrapper{margin:0 auto; width:900px;}
 	
-.content{background-color:#FFFFFF; border:1px solid #bab9b9; text-align:center; padding-bottom:25px;}
+.content{background-color:#FFFFFF; border:1px solid #bab9b9; padding:25px;}
 
 .in{width:850px; margin:25px auto; text-align:left;}
 

@@ -1,28 +1,28 @@
 
 - if current_user
   %h1 Your Awards
-  %ul
+  %ul.button-list
     - current_user.awards.each do |award|
-      %li= award.name
+      %li
+        %span.com_btn= award.name
 
-  %p Have you been granted new awards? Click it below!
+  %br.clear
+  %br.clear
+  %br.clear
+  %h2 Claim an award
   
-  %ul
+  %ul.button-list
     - current_user.unachieved_awards.each do |award|
       %li
-        = button_to award.name, user_award_path(current_user, award), :method => :put, :confirm => "Aside award '#{award.name}' to yourself?"
+        = button_to award.name, user_award_path(current_user, award), :method => :put, :confirm => "Aside award '#{award.name}' to yourself?", :class => "com_btn"
   
-  %p TODO - form to create/assign awards to self. In development, in the console, try:
-  %pre
-    - preserve do
-      award = Award.find_or_create_by_name("First meeting")
-      == User.find(#{current_user.id}).award_users.create(:award => award)
-
 - else
   %h1 Club Awards
   %p
     To trick our members into participating, we give away cool awards.
 
+%br.clear
+%br.clear
 %h2 Current members
 
 %ul.current-members
