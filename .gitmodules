@@ -1,0 +1,3 @@
+[submodule "cookbooks/postgresql9"]
+	path = cookbooks/postgresql9
+	url = git://github.com/damm/ey-postgresql9.git
