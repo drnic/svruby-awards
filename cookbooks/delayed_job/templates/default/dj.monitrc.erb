@@ -1,0 +1,7 @@
+# Rails 3 version
+check process <%= @worker_name %>
+  with pidfile /data/<%= @app_name %>/shared/pids/delayed_job.<%= @worker_num %>.pid
+  start program = "/bin/bash -l -c 'cd /data/<%= @app_name %>/current/;RAILS_ENV=<%= @framework_env %> HOME=/home/deploy TMPDIR=/tmp script/delayed_job start -i <%= @worker_num %>'" with uid deploy and gid deploy with timeout 65 seconds
+  stop program = "/bin/bash -l -c 'export RAILS_ENV=<%= @framework_env %>;cd /data/<%= @app_name %>/current/;script/delayed_job stop -i <%= @worker_num %>'"
+  if totalmem is greater than 240 MB for 2 cycles then restart # eating up memory?
+    group dj_<%= @app_name %>
