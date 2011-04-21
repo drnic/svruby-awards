@@ -2,6 +2,10 @@ SvrubyAwards::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'sessions#callback'
   match '/auth/failure', :to => 'sessions#failure'
   match "/signout" => "sessions#destroy", :as => :signout
+  
+  resources :users do
+    resources :awards
+  end
 
   root :to => "home#index"
 

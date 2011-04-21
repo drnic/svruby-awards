@@ -1,0 +1,2 @@
+class AwardUsersController < ApplicationController
+end

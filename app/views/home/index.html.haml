@@ -5,7 +5,12 @@
     - current_user.awards.each do |award|
       %li= award.name
 
-  %p Have you been granted new awards? Fill it in below!
+  %p Have you been granted new awards? Click it below!
+  
+  %ul
+    - current_user.unachieved_awards.each do |award|
+      %li
+        = button_to award.name, user_award_path(current_user, award), :method => :put, :confirm => "Aside award '#{award.name}' to yourself?"
   
   %p TODO - form to create/assign awards to self. In development, in the console, try:
   %pre

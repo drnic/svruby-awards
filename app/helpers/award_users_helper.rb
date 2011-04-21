@@ -1,0 +1,2 @@
+module AwardUsersHelper
+end
