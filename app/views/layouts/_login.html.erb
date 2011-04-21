@@ -1,5 +1,5 @@
 <% if current_user %>
-  <%= image_tag current_user.image_url, :class => "user-image" %>
+  <%= image_tag user_image(current_user), :class => "user-image" %>
   <%= current_user.name %> | 
   <%= link_to "Sign Out", signout_path %>
 <% else %>

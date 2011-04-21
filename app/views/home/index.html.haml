@@ -28,6 +28,7 @@
 %ul.current-members
   - @members.each do |user|
     %li{:class => (user == current_user ? 'current-user' : 'other-user')}
-      = image_tag user.image_url, :class => "user-image"
+      - image = user_image(user)
+      = image_tag image, :class => "user-image"
       = user.name
     
