@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-  <title>Ninja Admin</title>
+  <title>SV Ruby Club Awards</title>
   <link rel="stylesheet" type="text/css" href="/stylesheets/ninja-admin.css" />
   <link rel="stylesheet" type="text/css" href="/stylesheets/application.css" />
   <%= javascript_include_tag :all %>
@@ -13,7 +13,7 @@
 
 	<div class="wrapper">
 	
-		<h1 class="logo">NINJA ADMIN</h1>
+		<h1 class="logo">SV Ruby Club Awards</h1>
 		<p class="txt_right"><%= render :partial => 'layouts/login' %></p>
 	
 	<!-- Navigation -->
@@ -30,14 +30,17 @@
 	
 		<div class="content">
       <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
+        <div class="check"><div class="<%= name %>">
+          <img src="images/<%= name %>.gif" alt="check" class="icon">
+          <%= msg %>
+        </div></div>
       <% end %>
       
 		  <%= yield %>
 		</div>
 		
 		
-		<p class="footer"><a href="#">ADVANCED  SEARCH</a> <span class="v_line"> |</span> <a href="#">LOGOUT</a></p>
+		<p class="footer"></p>
 		
 		
 	</div>

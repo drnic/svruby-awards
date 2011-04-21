@@ -56,11 +56,11 @@ a:hover{color:#f7941d;}
 
 .check{ margin:25px; text-align:left; padding:10px 15px; border:1px solid #bab9b9; background-color:#f7f7f7;}
 
-.good{}
+.good, .notice{}
 
 .icon{padding-right:8px; float:left;}
 
-.bad{}
+.bad, .error{}
 
 
 /*..................................................... Navigation .....................*/	
