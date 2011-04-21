@@ -17,3 +17,12 @@
   %h1 Club Awards
   %p
     To trick our members into participating, we give away cool awards.
+
+%h2 Current members
+
+%ul.current-members
+  - @members.each do |user|
+    %li{:class => (user == current_user ? 'current-user' : 'other-user')}
+      = image_tag user.image_url, :class => "user-image"
+      = user.name
+    
